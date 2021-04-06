@@ -27,7 +27,7 @@ export class JobsService {
 
   async applyJob(id) {
     let job = ProxyState.jobs.find(job => job.id === id)
-    job.description = "You have Applied!"
+    job.description += "You have Applied!"
     await api.put('jobs/' + id, { description: job.description })
     ProxyState.jobs = ProxyState.jobs
   }
