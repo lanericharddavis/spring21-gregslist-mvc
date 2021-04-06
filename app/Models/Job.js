@@ -20,8 +20,8 @@ export default class Job {
               <p class="card-text">${this.description}</p>
           </div>
           <div class="px-3 pb-3 d-flex justify-content-between">
-              <button type="button" class="btn btn-danger" onclick="app.carsController.deleteCar('${this.id}')">Delete</button>
-              <button type="button" class="btn btn-info" onclick="app.carsController.bid('${this.id}')">Bid</button>
+              <button type="button" class="btn btn-danger" onclick="app.jobsController.deleteJob('${this.id}')">Delete</button>
+              <button type="button" class="btn btn-info" onclick="app.jobsController.applyJob('${this.id}')">Apply</button>
           </div>
       </div>
     </div>

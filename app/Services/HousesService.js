@@ -5,23 +5,23 @@ import { api } from "./AxiosService.js";
 
 class HousesService {
   async getHouses() {
-    let res = await api.get('houses')
-    console.log(res.data)
-    ProxyState.houses = res.data.map(h => new House(h))
+    let response = await api.get('houses')
+    console.log(response.data)
+    ProxyState.houses = response.data.map(h => new House(h))
   }
 
   async createHouse(newHouse) {
     // NOTE post creates data in the server, the first argument to extend the url the second is the data to send
-    let res = await api.post('houses', newHouse)
-    console.log(res.data)
+    let response = await api.post('houses', newHouse)
+    console.log(response.data)
 
 
     // the lazy way
     // this.getHouses()
 
     // the longhand way
-    res.data.id = res.data._id
-    let house = new House(res.data)
+    response.data.id = response.data._id
+    let house = new House(response.data)
     ProxyState.houses = [...ProxyState.houses, house]
   }
   async bid(id) {
