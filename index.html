@@ -23,158 +23,226 @@
             </a>
         </nav>
     </header>
+
     <main class="container" id='app'>
         <div class="row m-3 justify-content-around">
             <button class="btn btn-warning">Cars</button>
             <button class="btn btn-warning">Houses</button>
             <button class="btn btn-warning">Jobs</button>
         </div>
-        <div class="row mt-5">
-            <div class="col">
-                <h1>Cars
-                    <!-- Button trigger modal -->
-                    <button title="Open Create Car Form" type="button" class="btn btn-outline-success"
-                        data-toggle="modal" data-target="#new-car-form">
-                        <i class="fas fa-plus" aria-hidden="true"></i>
-                    </button>
-                </h1>
-            </div>
-        </div>
-        <!-- Modal -->
-        <div class="modal fade" id="new-car-form" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">New Car</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
+
+        <section cars>
+            <div class="row mt-5">
+                <div class="col">
+                    <h1>Cars
+                        <!-- Button trigger modal -->
+                        <button title="Open Create Car Form" type="button" class="btn btn-outline-success"
+                            data-toggle="modal" data-target="#new-car-form">
+                            <i class="fas fa-plus" aria-hidden="true"></i>
                         </button>
-                    </div>
-                    <!-- when submitted run the function provided
-                    this can be triggered by the button or the enter key -->
-                    <form onsubmit="app.carsController.createCar()">
-                        <div class="modal-body">
-                            <!-- Form to create a car  -->
-                            <div class="form-group">
-                                <label for="make">Make</label>
-                                <!-- the id determines the property on the form object -->
-                                <input type="text" class="form-control" id="make" placeholder="Make..." required>
-                            </div>
-                            <div class="form-group">
-                                <label for="model">Model</label>
-                                <input type="text" class="form-control" id="model" placeholder="Model..." required>
-                            </div>
-                            <div class="form-group">
-                                <label for="make">Year</label>
-                                <input type="number" class="form-control" id="year" placeholder="Year..." min="1920"
-                                    max="2021" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="price">Price</label>
-                                <input type="number" class="form-control" id="price" placeholder="Price..." min="1">
-                            </div>
-                            <div class="form-group">
-                                <label for="description">Description</label>
-                                <input type="text" class="form-control" id="description" placeholder="Description..."
-                                    minlength="3" maxlength="20">
-                            </div>
-                            <div class="form-group">
-                                <label for="imgUrl">Image Url</label>
-                                <input type="text" class="form-control" id="imgUrl" placeholder="Url...">
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Create</button>
-                        </div>
-                    </form>
+                    </h1>
                 </div>
             </div>
-        </div>
-        <div class="row" id="cars">
-        </div>
-
-
-
-
-        <div class="row mt-5">
-            <div class="col">
-                <h1>Houses
-                    <!-- Button trigger modal -->
-                    <button title="Open Create House Form" type="button" class="btn btn-outline-success"
-                        data-toggle="modal" data-target="#new-house-form">
-                        <i class="fas fa-plus" aria-hidden="true"></i>
-                    </button>
-                </h1>
-            </div>
-        </div>
-        <!-- Modal -->
-        <div class="modal fade" id="new-house-form" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">New House</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+            <!-- Modal -->
+            <div class="modal fade" id="new-car-form" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">New Car</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <!-- when submitted run the function provided
+                        this can be triggered by the button or the enter key -->
+                        <form onsubmit="app.carsController.createCar()">
+                            <div class="modal-body">
+                                <!-- Form to create a car  -->
+                                <div class="form-group">
+                                    <label for="make">Make</label>
+                                    <!-- the id determines the property on the form object -->
+                                    <input type="text" class="form-control" id="make" placeholder="Make..." required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="model">Model</label>
+                                    <input type="text" class="form-control" id="model" placeholder="Model..." required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="make">Year</label>
+                                    <input type="number" class="form-control" id="year" placeholder="Year..." min="1920"
+                                        max="2021" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="price">Price</label>
+                                    <input type="number" class="form-control" id="price" placeholder="Price..." min="1">
+                                </div>
+                                <div class="form-group">
+                                    <label for="description">Description</label>
+                                    <input type="text" class="form-control" id="description"
+                                        placeholder="Description..." minlength="3" maxlength="20">
+                                </div>
+                                <div class="form-group">
+                                    <label for="imgUrl">Image Url</label>
+                                    <input type="text" class="form-control" id="imgUrl" placeholder="Url...">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Create</button>
+                            </div>
+                        </form>
                     </div>
-                    <!-- when submitted run the function provided
+                </div>
+            </div>
+            <div class="row" id="cars">
+            </div>
+        </section>
+
+        <section houses>
+            <div class="row mt-5">
+                <div class="col">
+                    <h1>Houses
+                        <!-- Button trigger modal -->
+                        <button title="Open Create House Form" type="button" class="btn btn-outline-success"
+                            data-toggle="modal" data-target="#new-house-form">
+                            <i class="fas fa-plus" aria-hidden="true"></i>
+                        </button>
+                    </h1>
+                </div>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="new-house-form" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">New House</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <!-- when submitted run the function provided
                                     this can be triggered by the button or the enter key -->
-                    <form onsubmit="app.housesController.createHouse()">
-                        <div class="modal-body">
-                            <!-- Form to create a house  -->
-                            <div class="form-group">
-                                <label for="price">Price</label>
-                                <!-- the id determines the property on the form object -->
-                                <input type="number" class="form-control" id="price" placeholder="Price..." required
-                                    min="0" max="999999999">
+                        <form onsubmit="app.housesController.createHouse()">
+                            <div class="modal-body">
+                                <!-- Form to create a house  -->
+                                <div class="form-group">
+                                    <label for="price">Price</label>
+                                    <!-- the id determines the property on the form object -->
+                                    <input type="number" class="form-control" id="price" placeholder="Price..." required
+                                        min="0" max="999999999">
+                                </div>
+                                <div class="form-group">
+                                    <label for="bedrooms">Bedrooms</label>
+                                    <input type="number" class="form-control" id="bedrooms" placeholder="Bedrooms..."
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="bathrooms">Bathrooms</label>
+                                    <input type="number" class="form-control" id="bathrooms" placeholder="Bathrooms..."
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="levels">Levels</label>
+                                    <input type="number" class="form-control" id="levels" placeholder="Levels..."
+                                        min="1">
+                                </div>
+                                <div class="form-group">
+                                    <label for="year">Year Built</label>
+                                    <input type="number" class="form-control" id="year" placeholder="Year Built..."
+                                        min="1700" max="2021">
+                                </div>
+                                <div class="form-group">
+                                    <label for="description">Description</label>
+                                    <input type="text" class="form-control" id="description"
+                                        placeholder="Description..." minlength="3" maxlength="20">
+                                </div>
+                                <div class="form-group">
+                                    <label for="imgUrl">Image Url</label>
+                                    <input type="text" class="form-control" id="imgUrl" placeholder="Url...">
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label for="bedrooms">Bedrooms</label>
-                                <input type="number" class="form-control" id="bedrooms" placeholder="Bedrooms..."
-                                    required>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Create</button>
                             </div>
-                            <div class="form-group">
-                                <label for="bathrooms">Bathrooms</label>
-                                <input type="number" class="form-control" id="bathrooms" placeholder="Bathrooms..."
-                                    required>
-                            </div>
-                            <div class="form-group">
-                                <label for="levels">Levels</label>
-                                <input type="number" class="form-control" id="levels" placeholder="Levels..." min="1">
-                            </div>
-                            <div class="form-group">
-                                <label for="year">Year Built</label>
-                                <input type="number" class="form-control" id="year" placeholder="Year Built..."
-                                    min="1700" max="2021">
-                            </div>
-                            <div class="form-group">
-                                <label for="description">Description</label>
-                                <input type="text" class="form-control" id="description" placeholder="Description..."
-                                    minlength="3" maxlength="20">
-                            </div>
-                            <div class="form-group">
-                                <label for="imgUrl">Image Url</label>
-                                <input type="text" class="form-control" id="imgUrl" placeholder="Url...">
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Create</button>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row" id="houses">
-        </div>
+            <div class="row" id="houses">
+            </div>
+        </section>
 
-
-
-
+        <section jobs>
+            <div class="row mt-5">
+                <div class="col">
+                    <h1>Jobs
+                        <!-- Button trigger modal -->
+                        <button title="Open Create Job Form" type="button" class="btn btn-outline-success"
+                            data-toggle="modal" data-target="#new-job-form">
+                            <i class="fas fa-plus" aria-hidden="true"></i>
+                        </button>
+                    </h1>
+                </div>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="new-job-form" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">New Job</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <!-- when submitted run the function provided
+                                            this can be triggered by the button or the enter key -->
+                        <form onsubmit="app.jobsController.createJob()">
+                            <div class="modal-body">
+                                <!-- Form to create a job  -->
+                                <div class="form-group">
+                                    <label for="company">Company</label>
+                                    <!-- the id determines the property on the form object -->
+                                    <input type="text" class="form-control" id="company" placeholder="Company..."
+                                        required minlength="1" maxlength="20">
+                                </div>
+                                <div class="form-group">
+                                    <label for="jobTitle">Title of Job</label>
+                                    <input type="text" class="form-control" id="jobTitle" placeholder="Title of Job..."
+                                        required minlength="1" maxlength="20">
+                                </div>
+                                <div class="form-group">
+                                    <label for="hours">Hours per Week</label>
+                                    <input type="number" class="form-control" id="hours" placeholder="Hours per Week..."
+                                        required min="1" max="168">
+                                </div>
+                                <div class="form-group">
+                                    <label for="rate">Hourly Rate</label>
+                                    <input type="number" class="form-control" id="rate" placeholder="Hourly Rate..."
+                                        min="1">
+                                </div>
+                                <div class="form-group">
+                                    <label for="description">Description</label>
+                                    <input type="text" class="form-control" id="description"
+                                        placeholder="Description..." minlength="3" maxlength="20">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Create</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="houses">
+            </div>
+        </section>
     </main>
+
     <footer class="container-fluid bg-dark text-light">
         <div class="row text-center">
             <div class="col p-2">
@@ -182,6 +250,7 @@
             </div>
         </div>
     </footer>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>

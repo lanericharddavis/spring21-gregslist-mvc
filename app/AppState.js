@@ -1,3 +1,4 @@
+import Job from "./Models/Job.js"
 import House from "./Models/House.js"
 import Car from "./Models/Car.js"
 import { EventEmitter } from "./Utils/EventEmitter.js"
@@ -8,9 +9,10 @@ class AppState extends EventEmitter {
   cars = []
 
   /** @type {House[]} */
-
   houses = []
 
+  /** @type {Job[]} */
+  jobs = []
 }
 
 export const ProxyState = new Proxy(new AppState(), {
